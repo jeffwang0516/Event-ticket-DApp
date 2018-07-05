@@ -2,10 +2,9 @@ pragma solidity ^0.4.22;
 
 
 contract FirstContract {
-    constructor() {
+    constructor() public{
     }
-
-    function test() public returns (string) {
+    function test() public pure returns (string) {
         return "Hi! Want tickets?!";
     }
 }
