@@ -1,0 +1,8 @@
+{
+    "name": "tickettoken",
+    "version": "1.0.0",
+    "description": "Ticket token",
+    "dependencies": {
+        "zeppelin-solidity": "^1.10.0"
+    }
+}
