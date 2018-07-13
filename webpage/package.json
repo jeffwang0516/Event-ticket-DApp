@@ -1,0 +1,8 @@
+{
+    "name": "dappweb",
+    "version": "1.0.0",
+    "description": "dApp web",
+    "dependencies": {
+        "web3": "github:ethereum/web3.js"
+    }
+}

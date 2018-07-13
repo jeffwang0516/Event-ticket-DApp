@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>Hello Web3</title>
+    <script type="text/javascript" src="node_modules/web3/dist/web3.min.js"></script>
+    <script type="text/javascript">
+      // Web3.providers.HttpProvider.prototype.sendAsync = Web3.providers.HttpProvider.prototype.send;
+      var web3 = new Web3();
+      web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
+      
+      // web3.eth.getCoinbase()
+      //       .then(console.log);
+      async function start() {
+        try {
+          
+          let defaultAccount = await web3.eth.coinbase;
+          let balance = await web3.eth.getBalance(defaultAccount);
+
+          var html_account = document.getElementById("account");
+          var html_balance = document.getElementById("balance");
+          html_account.textContent = defaultAccount;
+          html_balance.textContent = web3.toWei(balance, "ether");
+        } catch(err) {
+          console.error("Error:", err);
+        }
+      }
+
+      window.addEventListener("load", start);
+    </script>
+  </head>
+  <body>
+    <h1>Account: <span id="account"></span></h1>
+    <h3>You have <span id="balance"></span> Ether</h3>
+  </body>
+</html>

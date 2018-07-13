@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Ticket token",
     "dependencies": {
+        "truffle-hdwallet-provider": "0.0.5",
         "zeppelin-solidity": "^1.10.0"
     }
 }

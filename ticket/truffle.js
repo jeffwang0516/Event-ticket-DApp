@@ -11,6 +11,9 @@
  *     gasPrice: 10000000000,
  *   },
  */
+var HDWalletProvider = require("truffle-hdwallet-provider");
+var mnemonic = "clip blouse blanket angry crazy thunder yellow cup nation wild need away";
+var infura_url = "https://rinkeby.infura.io/ZveP44aCLdK0c7GYQhwR";
 
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
@@ -20,6 +23,12 @@ module.exports = {
       host: "localhost",
       port: 8545,
       network_id: "*" // Match any network id
+    },
+    rinkeby: {
+      provider: function() {
+        return new HDWalletProvider(mnemonic, infura_url)
+      },
+      network_id: "*"
     }
   }
 };
